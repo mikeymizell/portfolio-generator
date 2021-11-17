@@ -1,9 +1,3 @@
-const fs = require('fs');
-
-const profileDataArgs = process.argv.slice(2, process.argv.length);
-
-const [name, github] = profileDataArgs;
-
 const generatePage = (name, github) => {
     return `
     <!DOCTYPE html> 
@@ -22,13 +16,5 @@ const generatePage = (name, github) => {
     </html>
     `;
 };
-
-
-
-fs.writeFile('./index.html', generatePage(name, github), err => {
-    if (err) throw err;
-
-    console.log('Portfolio complete! Checkout indext.html to see the output!')
-});
 
 module.exports = generatePage;
